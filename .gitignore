@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+
+#Others
+.vscode/*
+.qmake.stash
+Makefile
