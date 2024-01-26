@@ -1,0 +1,15 @@
+Fonctionnalites souhaites:
+    liste des persos:
+        dossiers
+        copier coller
+        dupliquer
+        menutiem:
+            copier coller
+            dupliquer
+            lancer un de -> ouvrir une fenetre pour lancer le de
+
+    Menu de competence:
+        refaire l'hm
+        ajouter des boutons pour lancer rapidement un de en face de chaque competence
+
+    comment gerer les lancer conditionnel? type si l'ennemi est un geant
