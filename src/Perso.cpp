@@ -17,5 +17,5 @@ void Perso::setStrength(const int& newstrength) {
 }
 
 int Perso::getStrengtMod() const {
-    int strmodifier = strength - 10 / 2;
+    return (strength - 10) / 2;
 }

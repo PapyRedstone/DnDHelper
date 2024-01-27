@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
 
     Perso a;
     a.setName("Haaraaaaaald");
-    //std::cout << a.getName() << "\n";
+    std::cout << a.getName() << "\n";
     a.setStrength(12);
     std::cout << a.getStrengtMod() << "\n";
 }
