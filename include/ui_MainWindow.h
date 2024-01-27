@@ -24,23 +24,21 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_MainWindow
-{
+class Ui_MainWindow {
 public:
-    QWidget *centralwidget;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
-    QHBoxLayout *toolButtonLayout;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton;
-    QHBoxLayout *horizontalLayout;
-    QTreeView *persoListTreeView;
-    QTabWidget *persoTabWidgets;
-    QMenuBar *menubar;
-    QStatusBar *statusbar;
+    QWidget* centralwidget;
+    QWidget* verticalLayoutWidget;
+    QVBoxLayout* verticalLayout;
+    QHBoxLayout* toolButtonLayout;
+    QPushButton* pushButton_2;
+    QPushButton* pushButton;
+    QHBoxLayout* horizontalLayout;
+    QTreeView* persoListTreeView;
+    QTabWidget* persoTabWidgets;
+    QMenuBar* menubar;
+    QStatusBar* statusbar;
 
-    void setupUi(QMainWindow *MainWindow)
-    {
+    void setupUi(QMainWindow* MainWindow) {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(798, 624);
@@ -101,8 +99,7 @@ public:
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
 
-    void retranslateUi(QMainWindow *MainWindow)
-    {
+    void retranslateUi(QMainWindow* MainWindow) {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
@@ -111,7 +108,7 @@ public:
 };
 
 namespace Ui {
-    class MainWindow: public Ui_MainWindow {};
+    class MainWindow : public Ui_MainWindow {};
 } // namespace Ui
 
 QT_END_NAMESPACE

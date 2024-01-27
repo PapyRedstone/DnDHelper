@@ -53,9 +53,11 @@ OBJECTS_DIR   = obj/
 ####### Files
 
 SOURCES       = src/main.cpp \
-		src/MainWindow.cpp moc_MainWindow.cpp
+		src/MainWindow.cpp \
+		src/Perso.cpp moc_MainWindow.cpp
 OBJECTS       = obj/main.o \
 		obj/MainWindow.o \
+		obj/Perso.o \
 		obj/moc_MainWindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf \
@@ -136,7 +138,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		DndHelper.pro include/MainWindow.h \
 		include/ui_MainWindow.h src/main.cpp \
-		src/MainWindow.cpp
+		src/MainWindow.cpp \
+		src/Perso.cpp
 QMAKE_TARGET  = DndHelper.app
 DESTDIR       = 
 TARGET        = DndHelper.app
@@ -321,7 +324,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents include/MainWindow.h include/ui_MainWindow.h $(DISTDIR)/
-	$(COPY_FILE) --parents src/main.cpp src/MainWindow.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents src/main.cpp src/MainWindow.cpp src/Perso.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ui/MainWindow.ui $(DISTDIR)/
 
 
@@ -383,12 +386,16 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 
 ####### Compile
 
-obj/main.o: src/main.cpp include/MainWindow.h
+obj/main.o: src/main.cpp include/MainWindow.h \
+		include/Perso.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/main.o src/main.cpp
 
 obj/MainWindow.o: src/MainWindow.cpp include/MainWindow.h \
 		include/ui_MainWindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/MainWindow.o src/MainWindow.cpp
+
+obj/Perso.o: src/Perso.cpp include/Perso.hpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Perso.o src/Perso.cpp
 
 obj/moc_MainWindow.o: moc_MainWindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/moc_MainWindow.o moc_MainWindow.cpp

@@ -27,4 +27,5 @@ FORMS += ui/*.ui
 UI_DIR = include
 
 QT += gui
+QT += core
 QT += widgets
