@@ -6,11 +6,6 @@
 #include "Perso.hpp"
 
 int main2(int argc, char** argv) {
-
-    Perso p;
-    p.setName("Test");
-    std::cout << p.getName() << "\n";
-
     QApplication app(argc, argv);
     MainWindow mainWindow;
     mainWindow.show();
