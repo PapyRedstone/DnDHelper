@@ -9,7 +9,7 @@ Fonctionnalites souhaites:
             lancer un de -> ouvrir une fenetre pour lancer le de
 
     Menu de competence:
-        refaire l'hm
+        refaire l'ihm
         ajouter des boutons pour lancer rapidement un de en face de chaque competence
 
     comment gerer les lancer conditionnel? type si l'ennemi est un geant
