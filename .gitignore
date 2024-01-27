@@ -38,4 +38,5 @@
 ./Makefile
 ./*.user
 *moc*
-*.pro.user
+*.pro.user*
+.qtc_clangd/*
