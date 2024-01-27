@@ -6,6 +6,7 @@
 
 int main(int argc, char** argv) {
     std::cout << "AAAAAAAAAAAAAAAAAAAAAAAA\n";
+    std::cout << "Hello World" << std::endl;
     QApplication app(argc, argv);
     MainWindow mainWindow;
     mainWindow.show();
