@@ -18,7 +18,13 @@ INCLUDEPATH += ./include
 OBJECTS_DIR = obj/
 
 # Input
-SOURCES += src/*.cpp
+SOURCES += src/*.cpp 
+
+HEADERS += include/*.h
+
+FORMS += ui/*.ui
+
+UI_DIR = include
 
 QT += gui
 QT += widgets

@@ -34,5 +34,7 @@
 
 #Others
 .vscode/*
-.qmake.stash
-Makefile
+./.qmake.stash
+./Makefile
+./*.user
+*moc*
