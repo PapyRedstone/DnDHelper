@@ -9,6 +9,9 @@ public:
     std::string getName() const;
     void setName(const std::string& newName);
 
+    int getStrength() const;
+    void setStrength(const int& newstrength);
+    int getStrengtMod() const;
 private:
     std::string name;
     int strength, dexterity;
