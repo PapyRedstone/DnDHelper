@@ -2,15 +2,20 @@
 #include "ui_MainWindow.h"
 #include <QStringListModel>
 #include <QString>
-#include <qstringlistmodel.h>
+#include <qstandarditemmodel.h>
 
 MainWindow::MainWindow(QWidget* parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
-    QStringList a = QStringList(QString("test1"));
-    QAbstractListModel* model = new QStringListModel(a);
+    QStandardItemModel* model = new QStandardItemModel;
+    QStandardItem* parentItem = model->invisibleRootItem();
+    for (int i = 0; i < 4; ++i) {
+        QStandardItem* item = new QStandardItem(QString("item %0").arg(i));
+        parentItem->appendRow(item);
+        parentItem = item;
+    }
     ui->persoListTreeView->setModel(model);
 }
 

@@ -5,14 +5,14 @@
 #include <iostream>
 #include "Perso.hpp"
 
-int main2(int argc, char** argv) {
+int main(int argc, char** argv) {
     QApplication app(argc, argv);
     MainWindow mainWindow;
     mainWindow.show();
     return app.exec();
 }
 
-int main(int argc, char** argv) {
+int main2(int argc, char** argv) {
 
     Perso a;
     a.setName("Haaraaaaaald");

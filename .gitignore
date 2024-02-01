@@ -34,9 +34,9 @@
 
 #Others
 .vscode/*
-./.qmake.stash
+.qmake.stash
 ./Makefile
-./*.user
+*.user
 *moc*
 *.pro.user*
 .qtc_clangd/*
