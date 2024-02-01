@@ -364,6 +364,7 @@ compiler_moc_header_make_all: moc_MainWindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_MainWindow.cpp
 moc_MainWindow.cpp: include/MainWindow.h \
+		include/TreeItem.hpp \
 		moc_predefs.h \
 		/usr/lib/qt5/bin/moc
 	/usr/lib/qt5/bin/moc $(DEFINES) --include /home/alex/Progra/DnDHelper/moc_predefs.h -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -I/home/alex/Progra/DnDHelper -I/home/alex/Progra/DnDHelper/include -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -I/usr/include/c++/11/backward -I/usr/lib/gcc/x86_64-linux-gnu/11/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include include/MainWindow.h -o moc_MainWindow.cpp
@@ -390,14 +391,17 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean compiler_ui
 ####### Compile
 
 obj/main.o: src/main.cpp include/MainWindow.h \
+		include/TreeItem.hpp \
 		include/Perso.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/main.o src/main.cpp
 
 obj/MainWindow.o: src/MainWindow.cpp include/MainWindow.h \
+		include/TreeItem.hpp \
 		include/ui_MainWindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/MainWindow.o src/MainWindow.cpp
 
-obj/Perso.o: src/Perso.cpp include/Perso.hpp
+obj/Perso.o: src/Perso.cpp include/Perso.hpp \
+		include/TreeItem.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/Perso.o src/Perso.cpp
 
 obj/TreeItem.o: src/TreeItem.cpp include/TreeItem.hpp

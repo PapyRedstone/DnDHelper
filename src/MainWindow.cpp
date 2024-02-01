@@ -2,21 +2,26 @@
 #include "ui_MainWindow.h"
 #include <QStringListModel>
 #include <QString>
-#include <qstandarditemmodel.h>
 
 MainWindow::MainWindow(QWidget* parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow) {
     ui->setupUi(this);
-
-    QStandardItemModel* model = new QStandardItemModel;
-    QStandardItem* parentItem = model->invisibleRootItem();
-    for (int i = 0; i < 4; ++i) {
-        QStandardItem* item = new QStandardItem(QString("item %0").arg(i));
-        parentItem->appendRow(item);
-        parentItem = item;
-    }
-    ui->persoListTreeView->setModel(model);
 }
 
 MainWindow::~MainWindow() {}
+
+void MainWindow::buildTree(std::shared_ptr<TreeItem> tree) {
+    QStandardItemModel* model = new QStandardItemModel;
+    QStandardItem* parentItem = model->invisibleRootItem();
+    buildTree(tree, parentItem);
+    ui->persoListTreeView->setModel(model);
+}
+
+void MainWindow::buildTree(std::shared_ptr<TreeItem> tree, QStandardItem* parent) {
+    for (std::shared_ptr<TreeItem> child : tree->getChilds()) {
+        QStandardItem* item = new QStandardItem(QString(child->getName().c_str()));
+        parent->appendRow(item);
+        buildTree(child, item);
+    }
+}
